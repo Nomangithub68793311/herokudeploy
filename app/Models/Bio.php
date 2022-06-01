@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Bio extends Model
 {
     use HasFactory;
+    protected $table = 'bio';
+        protected  $fillable=['address','country','zipcode','phone'];
 }
