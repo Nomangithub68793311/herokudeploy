@@ -14,6 +14,7 @@ use App\Http\Controllers\SignupController;
 |
 */
 Route::post('/signup',[SignupController::class,'store']);
+Route::get('/test',[SignupController::class,'index']);
 Route::get('/', function () {
     return response()->json("hello from heroku");
 });
