@@ -36,7 +36,7 @@ class BioController extends Controller
      */
     public function store(Request $request)
     {
-        return ('hello');
+        return ($request);
         // $bio=new Bio();
         // $bio->address=$request->address;
         // $bio->country=$request->country;
