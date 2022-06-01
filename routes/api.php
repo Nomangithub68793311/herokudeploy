@@ -15,7 +15,6 @@ use App\Http\Controllers\SignupController;
 |
 */
 
-Route::post('/signup',[SignupController::class,'store']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
