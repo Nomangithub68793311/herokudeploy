@@ -42,7 +42,7 @@ class BioController extends Controller
         $bio->zipcode=$request->zipcode;
         $bio->phone=$request->phone;
         $bio->save();
-         return $bio;
+        return ($bio);
 
     }
 
