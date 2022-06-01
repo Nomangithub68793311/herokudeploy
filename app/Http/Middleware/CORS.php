@@ -29,10 +29,10 @@ class CORS
         header('Access-Control-Allow-Origin: *');
         header('Content-Type: application/json');
     
-        $ret = [
-            'result' => 'OK',
-        ];
-        print json_encode($ret);
+        // $ret = [
+        //     'result' => 'OK',
+        // ];
+        // print json_encode($ret);
         return $next($request);
     }
 }
