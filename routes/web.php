@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\BioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use App\Http\Controllers\SignupController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('/bio',[BioController::class,'store']);
 Route::post('/signup',[SignupController::class,'store']);
 Route::get('/test',[SignupController::class,'index']);
 Route::get('/', function () {
