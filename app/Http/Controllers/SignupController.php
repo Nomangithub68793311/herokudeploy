@@ -38,21 +38,21 @@ class SignupController extends Controller
      */
     public function store(Request $request)
     {  
-         return response()->json(['success'=>false, 'message' => 'Email Exists']);
+        //  return response()->json(['success'=>false, 'message' => 'Email Exists']);
 
-        // $found=Signup::where('email','=',$request->email)->first();
-        // if($found){
-        //     return response()->json(['success'=>false, 'message' => 'Email Exists']);
+        $found=Signup::where('email','=',$request->email)->first();
+        if($found){
+            return response()->json(['success'=>false, 'message' => 'Email Exists']);
 
-        // }
-        // $user=new Signup();
-        // $user->fullname=$request->fullname;
-        // $user->email=$request->email;
-        // $user->password=Hash::make($request->password);
-        // $user->gender=$request->gender;
-        // $user->birth_date=$request->birth_date;
-        // $user->save();
-        // return response()->json(['success'=>true, 'message' => 'Successfully Singned Up']);
+        }
+        $user=new Signup();
+        $user->fullname=$request->fullname;
+        $user->email=$request->email;
+        $user->password=Hash::make($request->password);
+        $user->gender=$request->gender;
+        $user->birth_date=$request->birth_date;
+        $user->save();
+        return response()->json(['success'=>true, 'message' => 'Successfully Singned Up']);
 
     }
 
