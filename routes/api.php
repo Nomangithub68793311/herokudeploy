@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\BioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,9 @@ use App\Http\Controllers\SignupController;
 |
 */
 
-
+Route::post('/bio',[BioController::class,'store']);
+Route::post('/signup',[SignupController::class,'store']);
+Route::get('/test',[SignupController::class,'index']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
