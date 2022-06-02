@@ -16,9 +16,7 @@ use App\Http\Controllers\BioController;
 |
 */
 
-Route::post('/bio',[BioController::class,'store']);
-Route::post('/signup',[SignupController::class,'store']);
-Route::get('/test',[SignupController::class,'index']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
