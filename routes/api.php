@@ -20,8 +20,9 @@ Route::fallback(function () {
     return response()->json("Route does not match");
 });
 
-Route::post('/bio',[BioController::class,'store']);
+
 Route::post('/signup',[SignupController::class,'store']);
+Route::post('/bio',[BioController::class,'store'])->middleware('auth:sanctum');
 Route::post('/login',[SignupController::class,'login']);
 Route::get('/test',[SignupController::class,'index']);
 Route::get('/middle',[SignupController::class,'test'])->middleware('check');
