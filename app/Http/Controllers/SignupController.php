@@ -88,7 +88,7 @@ class SignupController extends Controller
     {
         //
     }
-    public function check()
+    public function test()
     {
         return response()->json(['success'=>true,'message'=>'middle ware success']);
 
