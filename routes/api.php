@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\BioController;
+use \App\Http\Middleware\checkuser;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,8 @@ Route::post('/bio',[BioController::class,'store']);
 Route::post('/signup',[SignupController::class,'store']);
 Route::post('/login',[SignupController::class,'login']);
 Route::get('/test',[SignupController::class,'index']);
-Route::get('/middle',[SignupController::class,'check'])->middleware('check');
+Route::get('/middle',[SignupController::class,'check'])->middleware('checkuser');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); 
