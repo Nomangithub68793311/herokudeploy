@@ -16,7 +16,7 @@ class Checkuser
      */
     public function handle(Request $request, Closure $next)
     {
-        dd('hello');
+        echo 'hello';
         return $next($request);
     }
 }
