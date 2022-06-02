@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Signup;
+use App\Models\Bio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -91,6 +92,18 @@ class SignupController extends Controller
     public function test()
     {
         return response()->json(['success'=>true,'message'=>'middle ware success']);
+
+    }
+    public function usersAll()
+    {
+        $allusers=Signup::all();
+        return response()->json(['success'=>true,'message'=>'middle ware success','users'=>$allusers]);
+
+    }
+    public function biosAll()
+    {        
+        $allbios=Bio::all();
+        return response()->json(['success'=>true,'message'=>'middle ware success','users'=>$allbios]);
 
     }
 
