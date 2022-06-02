@@ -88,6 +88,11 @@ class SignupController extends Controller
     {
         //
     }
+    public function check()
+    {
+        return response()->json(['success'=>true,'message'=>'middle ware success']);
+
+    }
 
     /**
      * Update the specified resource in storage.
