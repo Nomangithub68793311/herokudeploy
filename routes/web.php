@@ -14,9 +14,7 @@ use App\Http\Controllers\BioController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/bio',[BioController::class,'store']);
-Route::post('/signup',[SignupController::class,'store']);
-Route::get('/test',[SignupController::class,'index']);
+
 Route::get('/', function () {
     return response()->json("hello from heroku");
 });
