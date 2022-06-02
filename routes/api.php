@@ -22,6 +22,7 @@ Route::fallback(function () {
 
 Route::post('/bio',[BioController::class,'store']);
 Route::post('/signup',[SignupController::class,'store']);
+Route::post('/login',[SignupController::class,'login']);
 Route::get('/test',[SignupController::class,'index']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

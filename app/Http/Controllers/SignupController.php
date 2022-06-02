@@ -67,6 +67,17 @@ class SignupController extends Controller
         //
     }
 
+    public function login(Request $request)
+    {
+        $user = Signup::where('email', '=', $request->email)->first();
+    if (!$user) {
+       return response()->json(['success'=>false, 'message' => 'Login Fail, please check email id']);
+    }
+    if (!Hash::check($request->password, $user->password)) {
+       return response()->json(['success'=>false, 'message' => 'Login Fail, pls check password']);
+    }
+       return response()->json(['success'=>true,'message'=>'success', 'data' => $user]);
+   }
     /**
      * Show the form for editing the specified resource.
      *
