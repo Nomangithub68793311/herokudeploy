@@ -53,7 +53,7 @@ class SignupController extends Controller
         $user->gender=$request->gender;
         $user->birth_date=$request->birth_date;
         $user->save();
-        $token=$user->createToken('myapptoken')->plainTextToken;
+        return $user->createToken('signup', ['signup'])->plainTextToken;
         return response()->json(['success'=>true,'token'=>$token, 'message' => 'Successfully Singned Up']);
 
     }
