@@ -16,6 +16,10 @@ use App\Http\Controllers\BioController;
 |
 */
 
+Route::fallback(function () {
+    return response()->json("Route does not match");
+});
+
 Route::post('/bio',[BioController::class,'store']);
 Route::post('/signup',[SignupController::class,'store']);
 Route::get('/test',[SignupController::class,'index']);
