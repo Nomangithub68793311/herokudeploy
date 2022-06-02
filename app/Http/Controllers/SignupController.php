@@ -78,7 +78,8 @@ class SignupController extends Controller
     if (!Hash::check($request->password, $user->password)) {
        return response()->json(['success'=>false, 'message' => 'Login Fail, pls check password']);
     }
-       return response()->json(['success'=>true,'message'=>'success', 'data' => $user]);
+      $token= $user->createToken('signup', ['signup'])->plainTextToken;
+       return response()->json(['data' => $user,'token'=>$token]);
    }
     /**
      * Show the form for editing the specified resource.

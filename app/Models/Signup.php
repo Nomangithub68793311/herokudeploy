@@ -11,9 +11,9 @@ class Signup extends Authenticatable
     use HasApiTokens, HasFactory;
     protected $dateFormat = 'Y-m-d';
     protected $guard = 'signup';
-    // protected $hidden = [
-    //     'password',
-    //     'remember_token',
-    // ];
+    protected $hidden = [
+        'password',
+        
+    ];
 
 }
