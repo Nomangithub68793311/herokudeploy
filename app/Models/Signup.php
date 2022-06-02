@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Signup extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory;
     protected $dateFormat = 'Y-m-d';
     protected $guard = 'signup';
     // protected $hidden = [
