@@ -116,11 +116,34 @@ class SignupController extends Controller
      * @param  \App\Models\Signup  $signup
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Signup $signup)
+    public function detete($id)
     {
-        //
+        try{
+            $user= Signup::find($id);
+            $user->delete();
+            return response()->json(['success'=>true,'message'=>'deleted succesfully']);
+
+        }
+        catch(Exception $e){
+            return response()->json(['success'=>false,'message'=>'error']);
+
+        }
+
+
     }
 
+    public function update(Request $request, $id)
+    {
+        try{
+            Signup::where("id", $id)->update(["fullname" => $request->fullname]);
+            return response()->json(['success'=>true,'message'=>'updated  succesfully']);
+
+        }
+        catch(Exception $e){
+            return response()->json(['success'=>false,'message'=>'error']);
+
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *

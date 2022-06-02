@@ -32,11 +32,25 @@ Route::fallback(function () {
 
 
 Route::post('/signup',[SignupController::class,'store']);
+
 Route::post('/bio',[BioController::class,'store'])->middleware('auth:sanctum');
+
 Route::post('/login',[SignupController::class,'login']);
+
 Route::get('/test',[SignupController::class,'index']);
+
+Route::delete('/detete/{id}',[SignupController::class,'detete'])->middleware('auth:sanctum');
+
+Route::put('/update/{id}',[SignupController::class,'update'])->middleware('auth:sanctum');
+
+Route::delete('/bio/detete/{id}',[BioController::class,'detete'])->middleware('auth:sanctum');
+
+Route::put('/bio/update/{id}',[BioController::class,'update'])->middleware('auth:sanctum');
+
 Route::get('/middle',[SignupController::class,'test'])->middleware('check');
+
 Route::get('/allUsers',[SignupController::class,'usersAll'])->middleware('auth:sanctum');
+
 Route::get('/allBios',[SignupController::class,'biosAll'])->middleware('auth:sanctum');
 
 

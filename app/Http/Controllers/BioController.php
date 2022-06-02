@@ -75,7 +75,39 @@ class BioController extends Controller
     {
         //
     }
+    public function detete($id)
+    {
+        try{
+            $user= Bio::find($id);
+            $user->delete();
+            return response()->json(['success'=>true,'message'=>'deleted succesfully']);
 
+        }
+        catch(Exception $e){
+            return response()->json(['success'=>false,'message'=>'error']);
+
+        }
+
+
+    }
+
+    public function update(Request $request, $id)
+    {
+        try{
+            Bio::where("id", $id)->update(["address" => $request->address,
+            "country" => $request->country,
+            "zipcode" => $request->zipcode,
+            "phone" => $request->phone
+        ]);
+
+            return response()->json(['success'=>true,'message'=>'updated  succesfully']);
+
+        }
+        catch(Exception $e){
+            return response()->json(['success'=>false,'message'=>'error']);
+
+        }
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -83,10 +115,7 @@ class BioController extends Controller
      * @param  \App\Models\Bio  $bio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bio $bio)
-    {
-        //
-    }
+   
 
     /**
      * Remove the specified resource from storage.
