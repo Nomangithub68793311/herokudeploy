@@ -41,6 +41,14 @@ class BioController extends Controller
         $bio->country=$request->country;
         $bio->zipcode=$request->zipcode;
         $bio->phone=$request->phone;
+
+        // if($request->hasFile('profile_image')){
+        //     $file=$request->file('profile_image');
+        //     $extension=$file->getClientOriginalExtension();
+        //     $filename=time().'.'.$extension;
+        //     $file->move('uploads/students/', $filename);
+        //     $bio->profile_image=$filename;
+        // }
         $bio->save();
         return ($bio);
 

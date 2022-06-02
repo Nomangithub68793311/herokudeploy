@@ -16,6 +16,16 @@ use App\Http\Controllers\BioController;
 |
 */
 
+//   api doamin----https://herokudeploynew.herokuapp.com/
+// {
+//     "fullname": "noman",
+//     "email": "hridoy@aol.com",
+//     "password": "rama6879",
+//     "gender":"male",
+//     "birth_date":"2022-05-23"
+//  }
+
+
 Route::fallback(function () {
     return response()->json("Route does not match");
 });
@@ -29,6 +39,4 @@ Route::get('/middle',[SignupController::class,'test'])->middleware('check');
 Route::get('/allUsers',[SignupController::class,'usersAll'])->middleware('auth:sanctum');
 Route::get('/allBios',[SignupController::class,'biosAll'])->middleware('auth:sanctum');
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-}); 
+
