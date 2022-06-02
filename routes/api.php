@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\BioController;
-use App\Http\Middleware\Checkuser;
 
 /*
 |--------------------------------------------------------------------------
